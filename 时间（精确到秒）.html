@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .as{
+            font-size: 25px;
+            height: 50px;
+            text-align: center;
+        } 
+    </style>
+</head>
+<body onload="sa()">
+    <div class="as" id="sv"></div>
+    <script>
+        function sa(){
+            let time=new Date();
+            let year=time.getFullYear();
+            let month=time.getMonth()+1;
+            let day=time.getDate();
+            let hour=time.getHours();
+            let minute=time.getMinutes();
+            let second=time.getSeconds();
+            let week=time.getDay();
+            let weekList=['日','一','二','三','四','五','六'];
+            let timeStr=year+'年'+month+'月'+day+'日'+'星期'+weekList[week]+''+(hour<10?'0'+hour:hour)+':'+(minute<10?'0'+minute:minute)+':'+(second<10?'0'+second:second)
+            document.getElementById('sv').innerHTML=timeStr;
+            setTimeout('sa()',0);
+        }
+    </script>
+</body>
+</html>
